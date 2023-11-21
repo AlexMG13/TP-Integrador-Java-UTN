@@ -1,4 +1,11 @@
-package sistemaDeReportesDeIncidentes;
+package sistemaDeReportesDeIncidentes.context;
+
+import sistemaDeReportesDeIncidentes.Problema;
+import sistemaDeReportesDeIncidentes.Servicio;
+import sistemaDeReportesDeIncidentes.Tecnico;
+import sistemaDeReportesDeIncidentes.states.EstadoIncidente;
+import lombok.getters;
+
 
 import java.time.LocalDate;
 import java.util.List;

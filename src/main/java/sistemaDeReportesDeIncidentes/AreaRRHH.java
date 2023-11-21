@@ -1,5 +1,7 @@
 package sistemaDeReportesDeIncidentes;
 
+import sistemaDeReportesDeIncidentes.context.Incidente;
+
 import java.util.List;
 
 public class AreaRRHH {
