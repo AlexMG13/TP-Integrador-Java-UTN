@@ -1,43 +1,31 @@
 package sistemaDeReportesDeIncidentes;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 import sistemaDeReportesDeIncidentes.context.Incidente;
 
 import java.util.List;
 
+@Entity
+@Table(name="mesa_de_ayuda")
 public class MesaDeAyuda {
 
-    private List<Cliente> listaClientes;
-    private List<Tecnico> listaTecnicos;
-    private List<Incidente> listaIncidentes;
+    @Column
+    private @Getter @Setter List<Cliente> listaClientes;
 
+    @Column
+    private @Getter @Setter List<Tecnico> listaTecnicos;
 
-    public List<Cliente> getListaClientes() {
-        return listaClientes;
-    }
+    @Column
+    private @Getter @Setter List<Incidente> listaIncidentes;
 
-    public void setListaClientes(List<Cliente> listaClientes) {
-        this.listaClientes = listaClientes;
-    }
-
-    public List<Tecnico> getListaTecnicos() {
-        return listaTecnicos;
-    }
-
-    public void setListaTecnicos(List<Tecnico> listaTecnicos) {
-        this.listaTecnicos = listaTecnicos;
-    }
-
-    public List<Incidente> getListaIncidentes() {
-        return listaIncidentes;
-    }
-
-    public void setListaIncidentes(List<Incidente> listaIncidentes) {
-        this.listaIncidentes = listaIncidentes;
-    }
 
     public void registrarIncidente();
     public void asignarTecnico();
     public void informarCliente();
     public void agregarHoras();
 
-}
+}*/

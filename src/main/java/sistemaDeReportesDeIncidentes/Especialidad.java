@@ -1,28 +1,25 @@
 package sistemaDeReportesDeIncidentes;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name="especialidad")
 public class Especialidad {
 
-    private int idEspecialidad;
-    private String nombre;
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private @Getter
+    @Setter int idEspecialidad;
+
+    @Column
+    private @Getter
+    @Setter String nombre;
 
     public Especialidad(int idEspecialidad, String nombre) {
         this.idEspecialidad = idEspecialidad;
-        this.nombre = nombre;
-    }
-
-    public int getIdEspecialidad() {
-        return idEspecialidad;
-    }
-
-    public void setIdEspecialidad(int idEspecialidad) {
-        this.idEspecialidad = idEspecialidad;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 }

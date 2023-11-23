@@ -1,38 +1,52 @@
 package sistemaDeReportesDeIncidentes.context;
 
+import jakarta.persistence.*;
+import lombok.*;
 import sistemaDeReportesDeIncidentes.Problema;
 import sistemaDeReportesDeIncidentes.Servicio;
 import sistemaDeReportesDeIncidentes.Tecnico;
 import sistemaDeReportesDeIncidentes.states.EstadoIncidente;
-import lombok.getters;
+
 
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Entity
+@Table(name="incidente")
 public class Incidente {
 
-    private int idIncidente;
+    @Id
+    @Column
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private @Getter @Setter int idIncidente;
 
-    private String cuitCliente;
+    @Column
+    private @Getter @Setter String cuitCliente;
 
-    private int idTecnico;
+    @Column
+    private @Getter @Setter int idTecnico;
 
-    private EstadoIncidente estado;
+    @Column
+    private @Getter @Setter EstadoIncidente estado;
 
-    private LocalDate fechaIncidente;
+    @Column
+    private @Getter @Setter LocalDate fechaIncidente;
 
-    private LocalDate fechaResolucion;
+    @Column
+    private @Getter @Setter LocalDate fechaResolucion;
 
-    private List<Problema> tipoProblema;
+    @Column
+    private @Getter @Setter  List<Problema> tipoProblema;
 
-    private String descripcion;
+    @Column
+    private @Getter @Setter String descripcion;
 
-    private Servicio tipoServicio;
+    @Column
+    private @Getter @Setter Servicio tipoServicio;
 
-    private int horasEstimadas;
-
-
+    @Column
+    private @Getter @Setter int horasEstimadas;
 
 
 

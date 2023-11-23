@@ -1,18 +1,20 @@
 package sistemaDeReportesDeIncidentes;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Entity
+@Table(name="area_comercial")
 public class AreaComercial {
 
-    private List<Cliente> listaClientes;
+    @Column
+    private @Getter @Setter List<Cliente> listaClientes;
 
-    public List<Cliente> getListaClientes() {
-        return listaClientes;
-    }
-
-    public void setListaClientes(List<Cliente> listaClientes) {
-        this.listaClientes = listaClientes;
-    }
 
     public void altaCliente();
     public void bajaCliente();

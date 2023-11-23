@@ -1,27 +1,26 @@
 package sistemaDeReportesDeIncidentes;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name="problema")
 public class Problema {
 
-    private int idProblema;
+    @Id
+    @Column
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private @Getter @Setter int idProblema;
 
-    private String tipoProblema;
+    @Column
+    private @Getter @Setter String tipoProblema;
 
     public Problema(int idProblema, String tipoProblema) {
         this.idProblema = idProblema;
         this.tipoProblema = tipoProblema;
     }
 
-    public int getIdProblema() {
-        return idProblema;
-    }
-
-    public void setIdProblema(int idProblema) {
-        this.idProblema = idProblema;
-    }
-
-    public String getTipoProblema() {
-        return tipoProblema;
-    }
 
     public void setTipoProblema(String tipoProblema) {
         this.tipoProblema = tipoProblema;

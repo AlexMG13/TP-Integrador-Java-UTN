@@ -1,35 +1,28 @@
 package sistemaDeReportesDeIncidentes;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name="reporte")
 public class Reporte {
 
-    private int idReporte;
-    private int idIncidente;
-    private int idTecnico;
+    @Id
+    @Column
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private @Getter @Setter int idReporte;
+
+    @Column
+    private @Getter @Setter int idIncidente;
+
+    @Column
+    private @Getter @Setter int idTecnico;
 
     public Reporte(int idReporte, int idIncidente, int idTecnico) {
         this.idReporte = idReporte;
         this.idIncidente = idIncidente;
         this.idTecnico = idTecnico;
-    }
-
-    public int getIdReporte() {
-        return idReporte;
-    }
-
-    public void setIdReporte(int idReporte) {
-        this.idReporte = idReporte;
-    }
-
-    public int getIdIncidente() {
-        return idIncidente;
-    }
-
-    public void setIdIncidente(int idIncidente) {
-        this.idIncidente = idIncidente;
-    }
-
-    public int getIdTecnico() {
-        return idTecnico;
     }
 
     public void setIdTecnico(int idTecnico) {
