@@ -9,11 +9,11 @@ import lombok.Setter;
 public class Problema {
 
     @Id
-    @Column
+    @Column(name = "id_problema")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private @Getter @Setter int idProblema;
 
-    @Column
+    @Column(name = "tipo_problema")
     private @Getter @Setter String tipoProblema;
 
     public Problema(int idProblema, String tipoProblema) {
@@ -21,8 +21,9 @@ public class Problema {
         this.tipoProblema = tipoProblema;
     }
 
+    Problema p1 = new Problema(1,"tipo 1");
+    Problema p2 = new Problema(2,"tipo 2");
+    Problema p3 = new Problema(3,"tipo 3");
+    Problema p4 = new Problema(4, "tipo 4");
 
-    public void setTipoProblema(String tipoProblema) {
-        this.tipoProblema = tipoProblema;
-    }
 }

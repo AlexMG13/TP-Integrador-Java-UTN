@@ -6,6 +6,7 @@ import jakarta.persistence.Persistence;
 import sistemaDeReportesDeIncidentes.context.Incidente;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class JPAApp {
 

@@ -25,29 +25,36 @@ public class Incidente {
     private @Getter @Setter String cuitCliente;
 
     @Column
-    private @Getter @Setter int idTecnico;
-
-    @Column
-    private @Getter @Setter EstadoIncidente estado;
-
-    @Column
     private @Getter @Setter LocalDate fechaIncidente;
 
-    @Column
-    private @Getter @Setter LocalDate fechaResolucion;
-
-    @Column
+    @ManyToMany
+    @JoinTable(
+            name = "problema_incidente",
+            joinColumns = @JoinColumn(name = "id_incidente"),
+            inverseJoinColumns = @JoinColumn(name = "problema_id")
+    )
     private @Getter @Setter  List<Problema> tipoProblema;
 
     @Column
     private @Getter @Setter String descripcion;
 
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "servicio_id", referencedColumnName = "id_servicio")
     private @Getter @Setter Servicio tipoServicio;
+
+    @ManyToOne
+    @JoinColumn
+    private @Getter @Setter EstadoIncidente estado;
+
+    @ManyToOne
+    @JoinColumn(name = "tecnico_id", referencedColumnName = "id_tecnico")
+    private @Getter @Setter Tecnico idTecnico;
 
     @Column
     private @Getter @Setter int horasEstimadas;
 
+    @Column
+    private @Getter @Setter LocalDate fechaResolucion;
 
 
     public List<Tecnico> devolverTecnico();
