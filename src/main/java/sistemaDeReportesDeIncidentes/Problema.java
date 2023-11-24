@@ -3,27 +3,37 @@ package sistemaDeReportesDeIncidentes;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import sistemaDeReportesDeIncidentes.context.Incidente;
+
+import java.util.*;
 
 @Entity
-@Table(name="problema")
+@Table(name="problemas")
 public class Problema {
 
     @Id
-    @Column(name = "id_problema")
+    @Column(name = "problema_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private @Getter @Setter int idProblema;
+    private @Getter @Setter Integer idProblema;
 
-    @Column(name = "tipo_problema")
+    @Column(name = "problema_tipo")
     private @Getter @Setter String tipoProblema;
 
-    public Problema(int idProblema, String tipoProblema) {
-        this.idProblema = idProblema;
+    @ManyToMany(mappedBy = "problemas")
+    public @Getter @Setter List<Incidente> incidentes;
+
+    public Problema(String tipoProblema) {
         this.tipoProblema = tipoProblema;
     }
 
-    Problema p1 = new Problema(1,"tipo 1");
-    Problema p2 = new Problema(2,"tipo 2");
-    Problema p3 = new Problema(3,"tipo 3");
-    Problema p4 = new Problema(4, "tipo 4");
+    @Override
+    public String toString() {
+        return "Problema{" +
+                "idProblema=" + idProblema +
+                ", tipoProblema='" + tipoProblema + '\'' +
+                '}';
+    }
+
+
 
 }

@@ -7,7 +7,7 @@ import lombok.Setter;
 @Entity
 @Table(name="cliente")
 public class Cliente {
-    @Column
+    @OneToMany
     private @Getter @Setter String cuit;
 
     @Column

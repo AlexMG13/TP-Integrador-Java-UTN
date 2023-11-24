@@ -2,17 +2,18 @@ package sistemaDeReportesDeIncidentes;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.List;
+import sistemaDeReportesDeIncidentes.context.Incidente;
+
+import java.util.*;
 
 @Entity
 @Table(name="tecnico")
 public class Tecnico {
 
     @Id
-    @Column
+    @Column(name = "tecnico_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private @Getter @Setter int idTecnico;
-
     @Column
     private @Getter @Setter String nombre;
     @Column
@@ -21,13 +22,11 @@ public class Tecnico {
     private @Getter @Setter int cantidadIncidentesResueltos;
     @Column
     private @Getter @Setter MedioComunicacion medioPreferido;
+    //@OneToOne(mappedBy = "tecnico_asignado")
+    @OneToMany(mappedBy = "tecnico_asignado")
+    private @Getter @Setter List<Incidente> incidentes;
 
-    public Tecnico(int idTecnico, String nombre, List<Especialidad> especialidad, MedioComunicacion medioPreferido) {
-        this.idTecnico = idTecnico;
-        this.nombre = nombre;
-        this.especialidad = especialidad;
-        this.medioPreferido = medioPreferido;
-    }
+
 
     public boolean resolverIncidente();
     public String indicarConsideraciones();
