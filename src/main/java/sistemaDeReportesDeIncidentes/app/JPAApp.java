@@ -3,7 +3,6 @@ package sistemaDeReportesDeIncidentes.app;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import sistemaDeReportesDeIncidentes.MedioComunicacion;
 import sistemaDeReportesDeIncidentes.context.Incidente;
 import sistemaDeReportesDeIncidentes.entities.*;
 
@@ -24,14 +23,14 @@ public class JPAApp {
             em.getTransaction().begin();
             ///do persistence stuff
 
-            Especialidad e1 = new Especialidad("tipo 1");
-            Especialidad e2 = new Especialidad("tipo 2");
-            Especialidad e3 = new Especialidad("tipo 3");
-
-            Tecnico t1 = new Tecnico("Ana", List.of(e1, e2));
-
             Problema p1 = new Problema("tipo 1");
             Problema p2 = new Problema("tipo 2");
+
+            Especialidad e1 = new Especialidad("tipo 1", List.of(p1));
+            Especialidad e2 = new Especialidad("tipo 2", List.of(p1));
+            Especialidad e3 = new Especialidad("tipo 3", List.of(p2));
+
+            Tecnico t1 = new Tecnico("Ana", List.of(e1, e2));
 
             Servicio s1 = new Servicio("servicio 1", List.of(e1, e2));
             Servicio s2 = new Servicio("servicio 2", List.of(e2, e3));

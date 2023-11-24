@@ -24,6 +24,7 @@ public class Problema {
 
     public Problema(String tipoProblema) {
         this.tipoProblema = tipoProblema;
+
     }
 
 }

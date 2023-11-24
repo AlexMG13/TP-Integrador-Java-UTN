@@ -22,9 +22,13 @@ public class Especialidad {
     @ManyToMany(mappedBy = "especialidades")
     private @Getter @Setter List<Tecnico> tecnicos;
 
+    @OneToMany
+    @JoinColumn(name = "especialidad_id", referencedColumnName = "especialidad_id")
+    private @Getter @Setter List<Problema> problemas;
 
-    public Especialidad(String nombre) {
 
+    public Especialidad(String nombre, List<Problema> problemas) {
         this.nombre = nombre;
+        this.problemas = problemas;
     }
 }

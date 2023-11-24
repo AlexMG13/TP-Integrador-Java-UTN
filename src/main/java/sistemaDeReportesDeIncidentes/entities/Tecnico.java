@@ -2,7 +2,6 @@ package sistemaDeReportesDeIncidentes.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import sistemaDeReportesDeIncidentes.MedioComunicacion;
 import sistemaDeReportesDeIncidentes.context.Incidente;
 
 import java.util.*;
@@ -14,7 +13,7 @@ public class Tecnico {
     @Id
     @Column(name = "tecnico_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private @Getter @Setter int tecnico_id;
+    private @Getter @Setter Integer tecnico_id;
 
     @Column(name = "tecnico_nombre")
     private @Getter @Setter String nombre;
@@ -41,13 +40,5 @@ public class Tecnico {
         this.nombre = nombre;
         this.especialidades = especialidades;
         /////this.medioPreferido = medioPreferido;
-    }
-
-    public String indicarConsideraciones(){
-        //TODO
-    }
-
-    public void modificarEstadoIncidente(){
-        //TODO
     }
 }

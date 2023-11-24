@@ -58,25 +58,4 @@ public class Incidente {
     @Column(name = "fecha_resolucion")////FALTA HACER: EN RELACION AL METODO RESOLVER INCIDENTE DE ENTIDAD TECNICO
     private @Getter @Setter LocalDate fechaResolucion;
 
-
-    public List<Tecnico> devolverTecnico(){
-        //TODO
-    }
-
-    public void asignarTecnico(){
-        //TODO
-    }
-
-    public void notificarTecnico(){
-        //TODO
-    }
-
-    public void notificarClienteResuelto(){
-        //TODO
-    }
-
-    public int calcularHorasEstimadas(){
-        //TODO
-    }
-
 }
