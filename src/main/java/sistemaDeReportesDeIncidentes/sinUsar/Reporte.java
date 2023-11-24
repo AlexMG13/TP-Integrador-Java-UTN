@@ -1,3 +1,7 @@
+/*
+
+ESTO LO PODEMOS SACAR, ES IR MUY FINO
+
 package sistemaDeReportesDeIncidentes;
 
 import jakarta.persistence.*;
@@ -31,3 +35,4 @@ public class Reporte {
 
     public void modificarEstadoIncidente();
 }
+*/

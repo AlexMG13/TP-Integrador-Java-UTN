@@ -1,3 +1,7 @@
+/*
+
+ME PARECE MEJOR ELIMINAR ESTA ENTIDAD ASI LO SIMPLIFICAMOS. LA PROFE CREO QUE DIJO QUE NO HACIA FALTA HACER LA MESA DE AYUDA
+
 package sistemaDeReportesDeIncidentes;
 
 import jakarta.persistence.Column;
@@ -6,6 +10,8 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import sistemaDeReportesDeIncidentes.context.Incidente;
+import sistemaDeReportesDeIncidentes.entities.Cliente;
+import sistemaDeReportesDeIncidentes.entities.Tecnico;
 
 import java.util.List;
 

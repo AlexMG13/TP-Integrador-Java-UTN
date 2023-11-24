@@ -1,4 +1,4 @@
-package sistemaDeReportesDeIncidentes;
+package sistemaDeReportesDeIncidentes.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +14,7 @@ public class Problema {
     @Id
     @Column(name = "problema_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private @Getter @Setter Integer idProblema;
+    private @Getter @Setter Integer problema_id;
 
     @Column(name = "problema_tipo")
     private @Getter @Setter String tipoProblema;
@@ -25,15 +25,5 @@ public class Problema {
     public Problema(String tipoProblema) {
         this.tipoProblema = tipoProblema;
     }
-
-    @Override
-    public String toString() {
-        return "Problema{" +
-                "idProblema=" + idProblema +
-                ", tipoProblema='" + tipoProblema + '\'' +
-                '}';
-    }
-
-
 
 }

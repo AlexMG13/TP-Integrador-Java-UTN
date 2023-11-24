@@ -1,10 +1,10 @@
-package sistemaDeReportesDeIncidentes;
+package sistemaDeReportesDeIncidentes.daos;
 
 import jakarta.persistence.EntityManager;
+import sistemaDeReportesDeIncidentes.Reporte;
+import sistemaDeReportesDeIncidentes.daos.ReporteDAO;
 
-import java.util.*;
-
-public class ReporteDAOImpl implements ReporteDAO{
+public class ReporteDAOImpl implements ReporteDAO {
     private EntityManager em;
 
     public ReporteDAOImpl(EntityManager em){

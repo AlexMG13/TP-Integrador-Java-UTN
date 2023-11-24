@@ -1,4 +1,4 @@
-package sistemaDeReportesDeIncidentes;
+package sistemaDeReportesDeIncidentes.daos;
 
 
 import sistemaDeReportesDeIncidentes.Reporte;

@@ -2,10 +2,10 @@ package sistemaDeReportesDeIncidentes.context;
 
 import jakarta.persistence.*;
 import lombok.*;
-import sistemaDeReportesDeIncidentes.Cliente;
-import sistemaDeReportesDeIncidentes.Problema;
-import sistemaDeReportesDeIncidentes.Servicio;
-import sistemaDeReportesDeIncidentes.Tecnico;
+import sistemaDeReportesDeIncidentes.entities.Cliente;
+import sistemaDeReportesDeIncidentes.entities.Problema;
+import sistemaDeReportesDeIncidentes.entities.Servicio;
+import sistemaDeReportesDeIncidentes.entities.Tecnico;
 import sistemaDeReportesDeIncidentes.states.EstadoIncidente;
 
 
@@ -20,14 +20,14 @@ public class Incidente {
     @Id
     @Column(name = "incidente_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private @Getter @Setter Integer idIncidente;
+    private @Getter @Setter Integer incidente_id;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_cuit", referencedColumnName = "cuit")
-    private @Getter @Setter Cliente cuitCliente;
+    @JoinColumn(name = "fk_cliente_cuit", referencedColumnName = "cliente_cuit")
+    private @Getter @Setter Cliente cliente_cuit;
 
-    @Column
-    private @Getter @Setter LocalDate fechaIncidente;
+    @Column(name = "fecha_incidente")
+    private @Getter @Setter LocalDate fecha_incidente;
 
     @ManyToMany
     @JoinTable(
@@ -37,36 +37,46 @@ public class Incidente {
     )
     private @Getter @Setter  List<Problema> problemas;
 
-    @Column
+    @Column(name = "incidente_descripcion")
     private @Getter @Setter String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "servicio_id", referencedColumnName = "id_servicio")
-    private @Getter @Setter Servicio tipoServicio;
+    @JoinColumn(name = "fk_servicio_id", referencedColumnName = "servicio_id")
+    private @Getter @Setter Servicio tipo_servicio;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "incidente_estado") /////FALTA HACER : NO SE COMO HACERLO PORQUE ES UNA INTERFACE, LO SACAMOS???
     private @Getter @Setter EstadoIncidente estado;
 
-    //@OneToOne
-    //@JoinColumn(name = "fk_tecnico_id")
     @ManyToOne
-    @JoinColumn(name = "fk_tecnico_id")
+    @JoinColumn(name = "fk_tecnico_id", referencedColumnName = "tecnico_id")
     private @Getter @Setter Tecnico tecnico_asignado;
 
-    @Column
-    private @Getter @Setter int horasEstimadas;
+    @Column(name = "incidente_horas_estimadas") ////FALTA HACER: EN RELACION AL METODO CALCULAR HORAS ESTIMADAS: LO SACAMOS??? POR AHI ES MUCHO DETALLE
+    private @Getter @Setter Integer horasEstimadas;
 
-    @Column
+    @Column(name = "fecha_resolucion")////FALTA HACER: EN RELACION AL METODO RESOLVER INCIDENTE DE ENTIDAD TECNICO
     private @Getter @Setter LocalDate fechaResolucion;
 
 
-    public List<Tecnico> devolverTecnico();
+    public List<Tecnico> devolverTecnico(){
+        //TODO
+    }
 
-    public void notificarTecnico();
+    public void asignarTecnico(){
+        //TODO
+    }
 
-    public void notificarClienteResuelto();
+    public void notificarTecnico(){
+        //TODO
+    }
 
-    public int calcularHorasEstimadas();
+    public void notificarClienteResuelto(){
+        //TODO
+    }
+
+    public int calcularHorasEstimadas(){
+        //TODO
+    }
 
 }

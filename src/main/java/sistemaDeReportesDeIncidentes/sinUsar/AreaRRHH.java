@@ -1,3 +1,7 @@
+/*
+
+ESTO LO PODEMOS SACAR, TAMBIEN ES IR MUY FINO
+
 package sistemaDeReportesDeIncidentes;
 
 import jakarta.persistence.Column;
@@ -6,6 +10,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import sistemaDeReportesDeIncidentes.context.Incidente;
+import sistemaDeReportesDeIncidentes.entities.Tecnico;
 
 import java.util.List;
 
@@ -25,4 +30,4 @@ public class AreaRRHH {
     public void modificarTecnico();
     public void generarReporte();
     public void generarInformeCompetencias();
-}
+}*/
