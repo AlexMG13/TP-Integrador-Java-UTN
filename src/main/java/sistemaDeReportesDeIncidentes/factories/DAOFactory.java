@@ -1,4 +1,4 @@
-package sistemaDeReportesDeIncidentes.factories;
+/*package sistemaDeReportesDeIncidentes.factories;
 
 import jakarta.persistence.EntityManager;
 import sistemaDeReportesDeIncidentes.daos.IncidenteDAO;
@@ -8,4 +8,4 @@ public class DAOFactory {
     public static IncidenteDAO getReporteDAO(EntityManager em){
         return new IncidenteDAOImpl(em);
     }
-}
+}*/

@@ -1,4 +1,4 @@
-package sistemaDeReportesDeIncidentes.services;
+/*package sistemaDeReportesDeIncidentes.services;
 
 import jakarta.persistence.EntityManager;
 import sistemaDeReportesDeIncidentes.context.Incidente;
@@ -16,4 +16,4 @@ public class IncidenteRepository {
     public void add(Incidente incidente){
         //TODO
     }
-}
+}*/

@@ -1,8 +1,10 @@
-package sistemaDeReportesDeIncidentes.daos;
+/*package sistemaDeReportesDeIncidentes.daos;
 
 import jakarta.persistence.EntityManager;
-import sistemaDeReportesDeIncidentes.Reporte;
+import jakarta.persistence.TypedQuery;
 import sistemaDeReportesDeIncidentes.context.Incidente;
+
+import java.util.List;
 
 public class IncidenteDAOImpl implements IncidenteDAO {
     private EntityManager em;
@@ -18,7 +20,7 @@ public class IncidenteDAOImpl implements IncidenteDAO {
 
     @Override
     public Incidente read(Integer id) {
-        return em.find(entityClass: Incidente.class, id);
+        return em.find(Incidente.class, id);
     }
 
     @Override
@@ -32,5 +34,11 @@ public class IncidenteDAOImpl implements IncidenteDAO {
         em.remove(incidente);
     }
 
-    //TODO
-}
+    public List<Incidente> findByTecnicoId(Integer id_tecnico){
+        TypedQuery<Incidente> q = em.createQuery("SELECT t FROM Incidente t WHERE t.fk_tecnico.id = :id_tecnico",
+                Incidente.class);
+        q.setParameter("tecnico_id", id_tecnico);
+        return q.getResultList();
+    }
+
+}*/

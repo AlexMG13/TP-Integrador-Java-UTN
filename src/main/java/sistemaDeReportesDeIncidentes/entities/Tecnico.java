@@ -8,7 +8,8 @@ import java.util.*;
 
 @Entity
 @Table(name="tecnicos")
-public class Tecnico {
+public class
+Tecnico {
 
     @Id
     @Column(name = "tecnico_id")

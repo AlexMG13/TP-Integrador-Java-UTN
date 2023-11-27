@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Table(name="clientes")
 public class Cliente {
+    @Id
     @Column(name = "cliente_cuit")
     private @Getter @Setter String cliente_cuit;
 

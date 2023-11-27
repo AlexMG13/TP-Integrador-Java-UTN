@@ -44,18 +44,31 @@ public class Incidente {
     @JoinColumn(name = "fk_servicio_id", referencedColumnName = "servicio_id")
     private @Getter @Setter Servicio tipo_servicio;
 
-    @ManyToOne
-    @JoinColumn(name = "incidente_estado") /////FALTA HACER : NO SE COMO HACERLO PORQUE ES UNA INTERFACE, LO SACAMOS???
-    private @Getter @Setter EstadoIncidente estado;
+    private @Getter @Setter String estado_en_tabla;
+
+    //private @Getter @Setter EstadoIncidente estado;
 
     @ManyToOne
     @JoinColumn(name = "fk_tecnico_id", referencedColumnName = "tecnico_id")
     private @Getter @Setter Tecnico tecnico_asignado;
 
-    @Column(name = "incidente_horas_estimadas") ////FALTA HACER: EN RELACION AL METODO CALCULAR HORAS ESTIMADAS: LO SACAMOS??? POR AHI ES MUCHO DETALLE
+    @Column(name = "incidente_horas_estimadas")
     private @Getter @Setter Integer horasEstimadas;
 
-    @Column(name = "fecha_resolucion")////FALTA HACER: EN RELACION AL METODO RESOLVER INCIDENTE DE ENTIDAD TECNICO
+    @Column(name = "fecha_resolucion")
     private @Getter @Setter LocalDate fechaResolucion;
 
+
+    /*public void pasarARecibido(){
+        this.estado.pasarARecibido(this);
+    }
+
+    public void pasarAAsignado(){
+        this.estado.pasarAAsignado(this);
+    }
+
+    public void pasarAResuelto() {
+        this.estado.pasarAResuelto(this);
+        }
+    */
 }

@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import sistemaDeReportesDeIncidentes.context.Incidente;
 import sistemaDeReportesDeIncidentes.entities.*;
+//import sistemaDeReportesDeIncidentes.states.Recibido;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -12,7 +13,7 @@ import java.util.*;
 public class JPAApp {
 
     public static EntityManager getEntityManager(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("tpIntegradorPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("tpintegradorPU");
         EntityManager em = emf.createEntityManager();
         return em;
     }
@@ -47,7 +48,9 @@ public class JPAApp {
             i1.setTipo_servicio(s1);
             i1.setDescripcion("La computadora está muy lenta");
             i1.setProblemas(List.of(p1));
+            //i1.pasarARecibido();
             i1.setTecnico_asignado(t1);
+            //i1.pasarAAsignado();
 
             Incidente i2 = new Incidente();
             i2.setCliente_cuit(c2);
@@ -56,6 +59,7 @@ public class JPAApp {
             i2.setDescripcion("La aplicación no inicia nunca");
             i2.setProblemas(List.of(p1, p2));
             i2.setTecnico_asignado(t1);
+
 
             t1.setIncidentes(List.of(i1, i2));//lo haria un metodo que asigna el incidente al tecnico
             p1.setIncidentes(List.of(i1, i2));
